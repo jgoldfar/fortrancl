@@ -25,6 +25,7 @@ choice.
 
 The basic installation procedure is to run:
 
+autoreconf -i
 ./configure
 make 
 make install

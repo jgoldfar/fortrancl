@@ -1,0 +1,31 @@
+dist: xenial
+
+sudo: false
+
+language: cpp
+
+compiler:
+  - clang
+  - gcc
+
+os:
+  - linux
+  - osx
+
+addons:
+  apt:
+    packages:
+      - autoconf
+      - gfortran
+      - ocl-icd-opencl-dev
+  homebrew:
+    packages:
+      - autoconf
+      - gcc
+
+script:
+  - autoreconf -i
+  - ./configure --prefix=`pwd`/usr
+  - make
+  - make check || echo "Tests failed."
+  - make install
