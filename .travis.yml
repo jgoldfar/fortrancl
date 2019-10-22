@@ -19,6 +19,7 @@ addons:
       - gfortran
       - ocl-icd-opencl-dev
   homebrew:
+    update: true
     packages:
       - autoconf
       - gcc
